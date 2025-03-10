@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quản lý sản phẩm (Phụ kiện)</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <h2>Quản lý sản phẩm (Phụ kiện)</h2>
+        <a href="../index.html" class="back-btn">Trở về trang chủ</a>
+        <!-- Form thêm/sửa sản phẩm -->
+        <form id="productForm">
+            <input type="hidden" id="productId">
+            <input type="text" id="describe" placeholder="Mô tả" required>
+            <input type="text" id="brand" placeholder="Thương hiệu" required>
+            <input type="text" id="name" placeholder="Tên sản phẩm" required>
+            <input type="number" id="price" placeholder="Giá (VND)" required>
+            <button type="submit">Thêm sản phẩm</button>
+        </form>
+
+        <!-- Danh sách sản phẩm -->
+        <ul id="productList"></ul>
+    </div>
+    <script type="module" src="script.js"></script>
+
+
+</body>
+
+</html>
