@@ -1,204 +1,131 @@
-/* Reset mặc định */
-* {
+body {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
-    font-family: 'Roboto', sans-serif;
-}
-
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px;
-}
-
-/* Header */
-header {
-    background: #fff;
-    border-bottom: 1px solid #ddd;
-    position: fixed;
-    width: 100%;
-    top: 0;
-    z-index: 1000;
-}
-
-header .container {
+    background: linear-gradient(135deg, #ff8488, #f8c5b7);
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.logo {
-    font-size: 24px;
-    font-weight: bold;
-    color: #4A90E2;
-}
-
-nav ul {
-    display: flex;
-    list-style: none;
-}
-
-nav ul li {
-    margin: 0 15px;
-}
-
-nav ul li a {
-    text-decoration: none;
-    color: #333;
-    font-size: 16px;
-}
-
-nav ul li a:hover {
-    color: #4A90E2;
-}
-
-.header-right {
-    display: flex;
-    align-items: center;
-}
-
-.search-bar {
-    padding: 8px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    margin-right: 15px;
-}
-
-.cart,
-.account {
-    font-size: 20px;
-    margin-left: 15px;
-    cursor: pointer;
-}
-
-/* Banner */
-.banner {
-    height: 400px;
-    background: url('https://via.placeholder.com/1200x400') center/cover no-repeat;
-    display: flex;
-    align-items: center;
     justify-content: center;
-    margin-top: 80px;
+    align-items: center;
+    height: 100vh;
+    font-family: 'Pacifico', cursive;
+    overflow: hidden;
+    position: relative;
 }
 
-.banner-content {
-    text-align: center;
-    color: #fff;
-}
-
-.banner-content h1 {
-    font-size: 36px;
-    margin-bottom: 20px;
-}
-
-.cta-btn {
-    padding: 12px 24px;
-    background: #4A90E2;
-    color: #fff;
-    border: none;
-    border-radius: 4px;
+.gift {
+    width: 300px;
+    height: 300px;
+    position: relative;
     cursor: pointer;
-    font-size: 16px;
-}
-
-.cta-btn:hover {
-    background: #357ABD;
-}
-
-/* Danh mục */
-.categories h2 {
-    text-align: center;
-    margin: 40px 0;
-    font-size: 24px;
-}
-
-.category-grid {
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    gap: 20px;
-}
-
-.category-item {
-    background: #F5F5F5;
-    padding: 20px;
-    text-align: center;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: all 0.3s;
-}
-
-.category-item:hover {
-    background: #4A90E2;
-    color: #fff;
-}
-
-/* Sản phẩm */
-.products h2 {
-    text-align: center;
-    margin: 40px 0;
-    font-size: 24px;
-}
-
-.product-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 20px;
-}
-
-.product-item {
-    background: #fff;
-    padding: 15px;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    text-align: center;
     transition: transform 0.3s;
 }
 
-.product-item:hover {
+.gift-img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.gift:hover {
     transform: scale(1.05);
 }
 
-.product-item img {
+.ribbon {
+    position: absolute;
+    background: #fff;
+}
+
+.ribbon.vertical {
+    width: 20px;
+    height: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.ribbon.horizontal {
+    height: 20px;
     width: 100%;
-    height: 150px;
-    object-fit: cover;
+    top: 50%;
+    transform: translateY(-50%);
 }
 
-.product-item h3 {
-    font-size: 18px;
-    margin: 10px 0;
-}
-
-.product-item p {
-    color: #e74c3c;
-    font-weight: bold;
-}
-
-.add-btn {
-    margin-top: 10px;
-    padding: 8px 16px;
-    background: #4A90E2;
-    color: #fff;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-}
-
-.add-btn:hover {
-    background: #357ABD;
-}
-
-/* Footer */
-footer {
-    background: #333;
-    color: #fff;
-    padding: 20px 0;
+.card {
+    display: block;
     text-align: center;
-    margin-top: 40px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+    color: white;
+    position: absolute;
+    z-index: 10;
+    font-size: 1.8rem;
+    transform-origin: center;
+    animation: expandFromCenter 3s ease-out forwards;
+    opacity: 0;
+    height: 500px;
+    width: 900px;
+    transform: scale(0);
+    transition: transform 1s ease-out, opacity 0.5s ease-out;
 }
 
-footer a {
-    color: #4A90E2;
-    text-decoration: none;
+.card.show {
+    display: block;
 }
+
+.confetti {
+    position: absolute;
+    top: -10px;
+    width: 10px;
+    height: 10px;
+    background-color: yellow;
+    border-radius: 50%;
+    animation: fall 5s infinite;
+}
+
+.img-gift {
+    margin: auto;
+    border-radius: 10px;
+    width: 300px;
+    height: 200px;
+    background-image: url(./123.gif);
+    background-size: cover;
+    background-position: top center;
+}
+
+.hidden {
+    display: none;
+}
+
+h1 {
+    margin-bottom: 16px;
+}
+
+#birthdayText {
+    font-size: 20px;
+    line-height: 2;
+    margin-top: 0px;
+    /* font-family: Arial, sans-serif; */
+}
+
+@keyframes fall {
+    0% { 
+        transform: translateY(0); 
+        opacity: 1; 
+    }
+    100% { 
+        transform: translateY(100vh) rotate(360deg); 
+        opacity: 0; 
+    }
+}
+
+@keyframes expandFromCenter {
+    0% {
+        transform: scaleX(0);
+        opacity: 0;
+    }
+    100% {
+        transform: scaleX(1);
+        opacity: 1;
+    }
+}
+  
